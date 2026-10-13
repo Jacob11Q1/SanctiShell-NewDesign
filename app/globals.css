@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/*
+ * Sanctishell design tokens: "Pearl & Olive".
+ * Every color, font and radius used in components comes from here.
+ * Never hard-code hex values or font names in components (CLAUDE.md §7).
+ *
+ * Tailwind v4 reads tokens from @theme (there is no tailwind.config file).
+ * Each token below becomes BOTH a CSS variable on :root (e.g. var(--color-bg))
+ * AND a Tailwind class (e.g. bg-bg, text-accent, border-border, rounded-brand).
+ */
+@theme {
+  /* Colors */
+  --color-bg: #f7f3ec;          /* pearl ivory: page background */
+  --color-surface: #efe8dc;     /* linen: cards, photo backdrops */
+  --color-text: #2b2620;        /* warm ink: headings, body */
+  --color-text-muted: #6e655a;  /* stone: eyebrows, captions (AA on bg) */
+  --color-accent: #5c6b3c;      /* olive: links, buttons, focus (AA on bg) */
+  --color-gold: #a88a5a;        /* soft gold: thin lines, ornaments only, NOT text */
+  --color-border: #e2d9ca;      /* sand: dividers */
+
+  /*
+   * Nacre: the iridescent tones of mother-of-pearl ("light through nacre").
+   * Decorative only (shimmer, hairlines, glows, giant display type). NEVER body text.
+   * TODO: confirm exact tones with Kai
+   */
+  --color-nacre-rose: #c9a9a3;
+  --color-nacre-lilac: #a8a3c4;
+  --color-nacre-aqua: #93b8b0;
+  --color-nacre-champagne: #c8ad7f;
+
+  /* Shape. TODO: confirm with Kai (placeholder value) */
+  --radius-brand: 4px;
+}
+
+/*
+ * Fonts point at variables that next/font sets in app/layout.tsx.
+ * "inline" makes Tailwind use the var() reference directly, so the
+ * classes font-display / font-body always pick up the loaded font.
+ */
+@theme inline {
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Small uppercase label above headings, e.g. "BEIT SAHOUR · BETHLEHEM" */
+@utility eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/*
+ * Iridescent gradient clipped to text. Used on a duplicate layer that fades in
+ * on hover (opacity only), and on the giant footer wordmark.
+ */
+@utility nacre-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-nacre-rose),
+    var(--color-nacre-lilac) 30%,
+    var(--color-nacre-aqua) 55%,
+    var(--color-nacre-champagne) 80%,
+    var(--color-nacre-rose)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@layer components {
+  /*
+   * Link underline that draws in from the left as an iridescent hairline.
+   * Animates transform only. Stays drawn for the current page (aria-current).
+   */
+  .nacre-underline {
+    position: relative;
+  }
+  .nacre-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.3em;
+    height: 1px;
+    background-image: linear-gradient(
+      90deg,
+      var(--color-nacre-rose),
+      var(--color-nacre-lilac),
+      var(--color-nacre-aqua),
+      var(--color-nacre-champagne)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nacre-underline:hover::after,
+  .nacre-underline:focus-visible::after,
+  .nacre-underline[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Visible keyboard focus everywhere, in the brand accent */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Respect users who ask for less motion (CLAUDE.md §7) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
