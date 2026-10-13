@@ -12,6 +12,13 @@ This file tells Claude how to work on this codebase. Read it fully before every 
   3. **Clothing (later):** an own apparel line with sizes and colors. Starts as a "Coming soon" waitlist.
 - **Brand feel:** calm, spacious, photo-led, story-first, timeless. The products shine; the interface stays quiet.
 - **Owner:** Kai (Jacob Qumsiyeh). Payments run through Stripe.
+- **The family story (facts from Kai, use these and nothing invented):**
+  - The workshop was founded in **1980** in Beit Sahour by Kai's grandfather, **Jacob Qumsiyeh**, because he loved the craft. Like others in Beit Sahour, he wanted to craft what Jesus did for us. The craft comes from Bethlehem, where Jesus was born.
+  - Kai's father, **Farah Qumsiyeh**, started working with him. The grandfather passed away on **11 October 2023**; Farah and Kai (**Jacob Qumsiyeh**, the grandson, who shares his name) continued the work together. Three generations.
+  - **The website is a memorial to the grandfather.** Kai: "This website will be his memory, from me to him." Our Story opens with him, and every page's footer carries a dedication to him. Treat anything about him with care and never invent details of his life.
+  - Family portraits are in `/public/story/` (cropped; guests in the background of the father's photo are blurred for their privacy). Originals are in the git-ignored `/_originals/story-photos/`.
+  - **Mission:** to share the family's story with the world, so that others can see and believe that Jesus is our Saviour.
+  - Workshop address: Eweena Street, Beit Sahour, Palestine. No photos of the workshop exist yet. No social media profiles yet.
 - **Timeline:** about 8 weeks, flexible. This is a flagship project: polish and quality matter more than the deadline.
 
 ## 2. How we work (most important section)
@@ -399,7 +406,7 @@ Update this table as pages move forward. Build only the page currently marked **
 | 7 | Customer account + downloads | Not started |
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
-| 10 | Our Story, Artisans, Journal | Not started |
+| 10 | Our Story, Artisans, Journal | In progress (Our Story built, awaiting Kai's review; Artisans, Journal not started) |
 | 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | Not started |
 
 ## 13. Never do

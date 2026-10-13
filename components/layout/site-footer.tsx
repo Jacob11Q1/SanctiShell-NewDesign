@@ -94,6 +94,13 @@ export function SiteFooter() {
         Sanctishell
       </p>
 
+      {/* Dedication to the founder, on every page (Kai: "this website will be his memory") */}
+      <p className="relative mx-auto mt-10 max-w-[1536px] px-4 text-center font-display text-lg font-light italic text-bg/75 md:px-8 md:text-xl">
+        <Link href="/our-story" className="nacre-underline hover:text-bg">
+          In loving memory of Jacob Qumsiyeh, who founded our workshop in 1980
+        </Link>
+      </p>
+
       {/* Bottom bar */}
       <div className="relative mx-auto flex max-w-[1536px] flex-col gap-4 px-4 py-8 text-xs text-bg/60 md:flex-row md:items-center md:justify-between md:px-8">
         <p>

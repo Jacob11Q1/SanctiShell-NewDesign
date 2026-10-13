@@ -46,7 +46,7 @@ The site is built **one page at a time**. Current progress:
 | 7 | Customer account + downloads | Not started |
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
-| 10 | Our Story, Artisans, Journal | Not started |
+| 10 | Our Story, Artisans, Journal | 🟡 Our Story built (a memorial to our founder), awaiting review; Artisans, Journal not started |
 | 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | Not started |
 
 Links in the header and footer point at pages that don't exist yet, so they 404 until their turn comes.
@@ -111,6 +111,7 @@ No environment variables are needed yet. When the database and Stripe are added,
 │   └── globals.css             # design tokens + shared effects (nacre, light sweep, sheen)
 ├── components/
 │   ├── home/                   # homepage chapters (hero, prologue, chapters I–V)
+│   ├── story/                  # Our Story sections (memorial hero, timeline, the work)
 │   ├── layout/                 # site header, mobile menu, footer, newsletter form
 │   ├── motion/                 # reusable animation wrappers
 │   └── ui/                     # wordmark, buttons
@@ -119,6 +120,7 @@ No environment variables are needed yet. When the database and Stripe are added,
 │   └── product-photos.ts       # real product photos, grouped by product slug
 ├── public/
 │   ├── products/[slug]/        # Kai's real product photos
+│   ├── story/                  # family portraits for Our Story
 │   └── placeholders/           # stock mood photos (dev only) + CREDITS.md
 ├── scripts/
 │   └── check-placeholders.mjs  # pre-launch placeholder check

@@ -1,4 +1,4 @@
-// Lists every placeholder photo still used in the code (CLAUDE.md §7b).
+// Lists every placeholder photo and empty <PhotoSlot> still in the code (CLAUDE.md §7b).
 // Run before launch: `npm run check:placeholders`. Exits with code 1 if any remain.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -14,7 +14,9 @@ function walk(dir) {
       readFileSync(path, "utf8")
         .split("\n")
         .forEach((line, i) => {
-          if (line.includes("placeholders/")) hits.push(`${path}:${i + 1}  ${line.trim()}`);
+          // Stock photos, and empty slots still waiting for a real photo
+          if (line.includes("placeholders/") || line.includes("<PhotoSlot"))
+            hits.push(`${path}:${i + 1}  ${line.trim()}`);
         });
     }
   }
