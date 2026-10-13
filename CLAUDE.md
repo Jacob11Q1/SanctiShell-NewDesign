@@ -407,7 +407,7 @@ Update this table as pages move forward. Build only the page currently marked **
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
 | 10 | Our Story, Artisans, Journal | In progress (Our Story built, awaiting Kai's review; Artisans, Journal not started) |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | Not started |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | In progress (FAQ built with answered questions only; policy questions wait for Kai in lib/faq.ts; others not started) |
 
 ## 13. Never do
 

@@ -47,7 +47,7 @@ The site is built **one page at a time**. Current progress:
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
 | 10 | Our Story, Artisans, Journal | 🟡 Our Story built (a memorial to our founder), awaiting review; Artisans, Journal not started |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | Not started |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | 🟡 FAQ built (answered questions only), others not started |
 
 Links in the header and footer point at pages that don't exist yet, so they 404 until their turn comes.
 
