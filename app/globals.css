@@ -111,6 +111,85 @@ body {
   }
 }
 
+/*
+ * Light sweep (used by components/motion/light-sweep.tsx).
+ * A narrow "window" (30% wide, soft edges) slides left to right over the text,
+ * while the iridescent copy of the text inside it slides the opposite way by
+ * the same amount, so the letters stay still and only the light moves.
+ * Both use the same timing, so their transforms always cancel out exactly.
+ * The parent section should use `overflow-x-clip` so the window can't widen the page.
+ */
+.light-sweep__window {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30%;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, #000 45%, #000 55%, transparent);
+  animation: light-sweep-window 9s cubic-bezier(0.45, 0, 0.55, 1) 1.2s infinite both;
+}
+.light-sweep__text {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(100% / 0.3); /* = the full width of the text */
+  animation: light-sweep-text 9s cubic-bezier(0.45, 0, 0.55, 1) 1.2s infinite both;
+}
+@keyframes light-sweep-window {
+  0% { transform: translateX(-100%); }
+  40%, 100% { transform: translateX(calc(100% / 0.3)); }
+}
+@keyframes light-sweep-text {
+  0% { transform: translateX(30%); }
+  40%, 100% { transform: translateX(-100%); }
+}
+
+/* Hover sheen: a soft band of light crosses a button or image tile (transform only) */
+.sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    color-mix(in srgb, var(--color-nacre-lilac) 35%, transparent) 45%,
+    color-mix(in srgb, #fff 45%, transparent) 50%,
+    color-mix(in srgb, var(--color-nacre-aqua) 35%, transparent) 55%,
+    transparent 70%
+  );
+  transform: translateX(-110%);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sheen:hover::before,
+.group:hover .sheen::before,
+.sheen:focus-visible::before {
+  transform: translateX(110%);
+}
+
+/* Hero photo settles from a slight zoom on first load (transform only, never hidden) */
+@keyframes hero-settle {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.hero-settle {
+  animation: hero-settle 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll cue: a drop of light running down a thin line (transform only) */
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); }
+  60%, 100% { transform: translateY(100%); }
+}
+.scroll-cue {
+  animation: scroll-cue 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
 /* Visible keyboard focus everywhere, in the brand accent */
 :focus-visible {
   outline: 2px solid var(--color-accent);

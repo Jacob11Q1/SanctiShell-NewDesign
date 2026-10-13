@@ -101,6 +101,7 @@ sanctishell/
 ├── components/
 │   ├── ui/                     # buttons, inputs, badges, modals
 │   ├── layout/                 # header, footer, nav, cart drawer
+│   ├── home/                   # homepage chapters (hero, prologue, chapters I–V)
 │   ├── product/                # cards, gallery, variant picker
 │   └── motion/                 # reusable animation wrappers
 ├── lib/
@@ -328,7 +329,8 @@ Nacre helpers in `globals.css`: `nacre-text` (iridescent gradient clipped to tex
 - NEVER use stock or AI-generated images to represent actual products for sale. Real product pages must use Kai's own photos of the real pieces.
 - Design image slots at final aspect ratios (e.g. 4:5 for product cards, 3:2 or full-bleed for hero and story sections) so real photos drop in without layout changes.
 - All images go through next/image with proper sizes, alt text, and modern formats (AVIF/WebP).
-- Before launch, run a check that lists every remaining placeholder image so none reach production.
+- Before launch, run a check that lists every remaining placeholder image so none reach production (`npm run check:placeholders`).
+- **Real product photos** from Kai live in `/public/products/[product-slug]/` and are registered in `lib/product-photos.ts`. They are resized to 2400px and stripped of camera metadata; originals are kept locally in the git-ignored `/_originals/`. Current shots are marked `// TODO: reshoot on clean background`. Never search the web for product photos.
 
 ## 8. Code conventions
 
@@ -379,6 +381,7 @@ npx prisma migrate deploy            # apply migrations (staging/prod)
 npx prisma studio                    # browse the database
 npx prisma db seed                   # seed sample data (local only)
 npm run lint
+npm run check:placeholders           # list placeholder photos still in use (must be empty before launch)
 ```
 
 ## 12. Page tracker
@@ -388,7 +391,7 @@ Update this table as pages move forward. Build only the page currently marked **
 | # | Page | Status |
 | --- | --- | --- |
 | 1 | Foundation: tokens, header, footer | In progress (tokens, fonts, header, footer built; awaiting Kai's review) |
-| 2 | Homepage | Not started |
+| 2 | Homepage | In progress (5-chapter story built with placeholder photos + draft copy; awaiting Kai's review) |
 | 3 | Workshop pieces collection | Not started |
 | 4 | Product page | Not started |
 | 5 | Digital products | Not started |

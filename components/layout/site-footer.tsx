@@ -3,7 +3,6 @@ import {
   helpNav,
   legalNav,
   shopNav,
-  socialNav,
   storyNav,
   type NavItem,
 } from "@/lib/navigation";
@@ -68,19 +67,20 @@ export function SiteFooter() {
         <hr className="my-16 border-bg/15 md:my-20" />
 
         {/* Link columns + address */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
           <FooterColumn title="Shop" items={shopNav} />
           <FooterColumn title="Sanctishell" items={storyNav} />
           <FooterColumn title="Help" items={helpNav} />
-          <FooterColumn title="Follow" items={socialNav} />
 
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
+          {/* No social profiles yet; add a "Follow" column here when they exist */}
+          <div className="col-span-2 md:col-span-1">
             <h2 className="eyebrow text-bg/60">The workshop</h2>
-            {/* TODO: full street address and contact details from Kai */}
             <address className="mt-5 text-sm not-italic leading-relaxed text-bg/85">
+              Eweena Street
+              <br />
               Beit Sahour
               <br />
-              Bethlehem
+              Palestine
             </address>
           </div>
         </div>

@@ -18,7 +18,7 @@ const manrope = Manrope({
 
 // TODO: final title/description copy from Kai
 export const metadata: Metadata = {
-  title: "Sanctishell",
+  title: { default: "Sanctishell", template: "%s · Sanctishell" },
   description: "Handcrafted mother-of-pearl and olive wood pieces from Beit Sahour, Bethlehem.",
 };
 
@@ -28,7 +28,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla's
+          cz-shortcut-listen) add attributes to <body> before React loads.
+          Only affects <body>'s own attributes, not its children. */}
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

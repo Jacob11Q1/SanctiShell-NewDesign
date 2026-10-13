@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:placeholders": "node scripts/check-placeholders.mjs"
   },
   "dependencies": {
+    "motion": "^14.2.0",
     "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"

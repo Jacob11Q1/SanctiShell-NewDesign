@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# untouched original photos (full size, with camera metadata); web copies live in public/products
+/_originals/

@@ -31,9 +31,3 @@ export const legalNav: NavItem[] = [
   { label: "Privacy policy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
 ];
-
-// TODO: real social profile URLs from Kai
-export const socialNav: NavItem[] = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-];
