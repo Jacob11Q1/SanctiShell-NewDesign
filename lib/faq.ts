@@ -30,6 +30,12 @@ export const faqCategories: FaqCategory[] = [
         link: { label: "Read our story", href: "/our-story" },
       },
       {
+        question: "How long does it take to make a cross?",
+        answer:
+          "About four to five days. We start from a sea shell, cut it, polish it, set and glue each piece onto the cross, then shape every piece to fit its place. Everything, to this day, is done by hand.",
+        link: { label: "Meet the artisans", href: "/artisans" },
+      },
+      {
         question: "What are they made of?",
         answer:
           "Mother-of-pearl, abalone shell and olive wood. Many pieces bring them together, like our olive wood crosses with abalone inlay.",
@@ -116,8 +122,8 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Who makes the pieces?",
         answer:
-          "Our family. Farah Qumsiyeh and his son Jacob carry on the workshop that Farah's father, Jacob Qumsiyeh, founded in 1980.",
-        link: { label: "Meet the family", href: "/our-story" },
+          "Our family. Farah Qumsiyeh, at the bench since 1990, and his son Jacob, since 2005, carry on the workshop that Farah's father, Jacob Qumsiyeh, founded in 1980.",
+        link: { label: "Meet the artisans", href: "/artisans" },
       },
       {
         question: "Where is the workshop?",

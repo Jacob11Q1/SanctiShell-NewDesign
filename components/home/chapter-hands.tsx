@@ -8,23 +8,23 @@ import chiselImage from "@/public/placeholders/hands-chisel.jpg";
 import carvingImage from "@/public/placeholders/hands-carving.jpg";
 import { ChapterHeading } from "./chapter-heading";
 
-// TODO: Kai, confirm these steps match how the workshop really works
+// The real process, as Kai described it (2026-10-15). Full version on /artisans.
 const steps = [
   {
-    title: "Select",
-    text: "Each shell and each piece of wood is chosen by eye and by hand, for its color, its grain and the way it holds the light.",
-  },
-  {
     title: "Cut",
-    text: "The shell and the wood are cut into their first rough shapes, slowly, so nothing is wasted.",
-  },
-  {
-    title: "Carve",
-    text: "Details are carved and inlaid with small hand tools, one cut at a time.",
+    text: "Every cross begins with a sea shell, cut by hand.",
   },
   {
     title: "Polish",
-    text: "Polishing brings the light out of the nacre and the warmth out of the wood.",
+    text: "Each piece of shell is polished to bring out its light.",
+  },
+  {
+    title: "Set",
+    text: "The pieces are laid onto the cross and glued, one by one.",
+  },
+  {
+    title: "Shape",
+    text: "Each piece is roughed and shaped to fit its exact place. Four to five days, for every cross.",
   },
 ];
 

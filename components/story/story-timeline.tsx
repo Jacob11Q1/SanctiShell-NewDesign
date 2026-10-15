@@ -28,7 +28,7 @@ const generations: Generation[] = [
     photo: { src: grandfather, alt: "Jacob Qumsiyeh, the founder, smiling in a dark suit" },
   },
   {
-    when: "Then", // TODO: the year Farah started working with his father
+    when: "1990",
     name: "Farah Qumsiyeh",
     role: "The son",
     text: "He started working with his father in the workshop and learned the craft from him.",
@@ -38,7 +38,7 @@ const generations: Generation[] = [
     when: "Today",
     name: "Jacob Qumsiyeh",
     role: "The grandson",
-    text: "Sharing his grandfather's name, he works beside his father. Since his grandfather passed away, the two of them have carried the work on together, and this website is built in his memory.",
+    text: "Sharing his grandfather's name and taught by both of them, he has worked beside his father since 2005. Since his grandfather passed away, the two of them have carried the work on together, and this website is built in his memory.",
     photo: { src: grandson, alt: "Jacob Qumsiyeh, the grandson, seated at a wooden table" },
   },
 ];
