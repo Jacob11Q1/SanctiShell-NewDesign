@@ -216,6 +216,22 @@ body {
   transform: scaleY(0);
 }
 
+/*
+ * Shipping journey: a point of pearl light travels the line from Beit Sahour to
+ * the customer, then fades and starts again. A full-width "runner" carries the dot
+ * at its right end and slides from off-left to its place (transform + opacity only).
+ * Reduced motion: the global rule ends it at once, invisible; the line stays.
+ */
+.journey-runner {
+  animation: journey 7s cubic-bezier(0.65, 0, 0.35, 1) 0.8s infinite both;
+}
+@keyframes journey {
+  0% { transform: translateX(-100%); opacity: 0; }
+  8% { opacity: 1; }
+  62% { opacity: 1; }
+  72%, 100% { transform: translateX(0); opacity: 0; }
+}
+
 /* Visible keyboard focus everywhere, in the brand accent */
 :focus-visible {
   outline: 2px solid var(--color-accent);

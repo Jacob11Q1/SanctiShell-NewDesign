@@ -3,6 +3,12 @@
 // Rule (CLAUDE.md §10, §13): never invent policies. An entry with `answer: null` is a
 // question we know customers will ask but Kai hasn't answered yet. It is NOT shown on
 // the site until he does. Answers marked TODO are drafts based on facts Kai gave us.
+//
+// Shipping answers come from lib/shipping-policy.ts (fill them in there, not here).
+
+import { shippingPolicy } from "@/lib/shipping-policy";
+
+const shippingLink = { label: "Read our shipping details", href: "/shipping" };
 
 export type FaqLink = { label: string; href: string };
 
@@ -75,11 +81,17 @@ export const faqCategories: FaqCategory[] = [
     id: "shipping",
     title: "Shipping",
     items: [
-      { question: "Where do you ship?", answer: null }, // TODO: Kai, which countries?
-      { question: "How long does delivery take?", answer: null }, // TODO: Kai
-      { question: "How much does shipping cost?", answer: null }, // TODO: Kai
-      { question: "Will I get a tracking number?", answer: null }, // TODO: Kai
-      { question: "Will I have to pay customs or import fees?", answer: null }, // TODO: Kai
+      {
+        question: "Where do you ship from?",
+        answer: `Every piece ships from our family workshop on ${shippingPolicy.shipsFrom}.`,
+        link: shippingLink,
+      },
+      // These appear automatically once filled in lib/shipping-policy.ts
+      { question: "Where do you ship?", answer: shippingPolicy.destinations?.text ?? null, link: shippingLink },
+      { question: "How long does delivery take?", answer: shippingPolicy.deliveryTimes?.text ?? null, link: shippingLink },
+      { question: "How much does shipping cost?", answer: shippingPolicy.costs?.text ?? null, link: shippingLink },
+      { question: "Will I get a tracking number?", answer: shippingPolicy.tracking?.text ?? null, link: shippingLink },
+      { question: "Will I have to pay customs or import fees?", answer: shippingPolicy.customs?.text ?? null, link: shippingLink },
     ],
   },
   {
