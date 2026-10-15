@@ -100,7 +100,7 @@ sanctishell/
 │   │   ├── cart/
 │   │   ├── checkout/success/
 │   │   ├── our-story/  artisans/  journal/
-│   │   └── faq/  contact/  shipping/  returns/  privacy/  terms/
+│   │   └── faq/  contact/  shipping/  returns/  privacy/  terms/  cookies/
 │   ├── account/                # orders, downloads (signed-in customers)
 │   ├── admin/                  # ADMIN role only
 │   ├── api/
@@ -361,6 +361,7 @@ Nacre helpers in `globals.css`: `nacre-text` (iridescent gradient clipped to tex
 - Rate-limit auth, contact and newsletter endpoints.
 - Sanitize any rich text before rendering. Never use `dangerouslySetInnerHTML` with user input.
 - No `console.log` left in committed code (the old site leaked debug logs into production).
+- **Keep the policies true.** `lib/legal/privacy.ts` and `lib/legal/cookies.ts` describe exactly what the site collects and which cookies it sets (today: none). Any change that adds a cookie, analytics, a third-party service or new personal data must update those files in the same change. The legal texts are drafts: Kai and a lawyer must review them before launch.
 
 ## 10. SEO, accessibility and content honesty
 
@@ -411,7 +412,7 @@ Update this table as pages move forward. Build only the page currently marked **
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
 | 10 | Our Story, Artisans, Journal | In progress (Our Story and Artisans built, awaiting Kai's review; Journal not started) |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | In progress (FAQ built with answered questions only; Contact built with a validated, rate-limited form, sending waits for an email provider + inbox from Kai; Shipping, Returns, Privacy, Terms not started) |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms, Cookies | In progress (FAQ built with answered questions only; Contact built (sending waits for an email provider + inbox); Shipping built (policy sections hidden until Kai fills lib/shipping-policy.ts); Terms, Privacy and Cookie policy drafted in lib/legal/, need Kai + lawyer review before launch; Returns not started) |
 
 ## 13. Never do
 

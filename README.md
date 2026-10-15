@@ -47,7 +47,7 @@ The site is built **one page at a time**. Current progress:
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
 | 10 | Our Story, Artisans, Journal | 🟡 Our Story (a memorial to our founder) and Artisans built, awaiting review; Journal not started |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | 🟡 FAQ and Contact built (form sending waits for an email provider); Shipping, Returns, Privacy, Terms not started |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms, Cookies | 🟡 FAQ, Contact, Shipping, Terms, Privacy and Cookie policy built (policies are drafts awaiting review); Returns not started |
 
 Links in the header and footer point at pages that don't exist yet, so they 404 until their turn comes.
 
@@ -115,6 +115,8 @@ No environment variables are needed yet. When the database and Stripe are added,
 │   ├── artisans/               # Artisans page sections (profiles, faith, process, founder)
 │   ├── faq/                    # FAQ accordion
 │   ├── contact/                # contact form and workshop details
+│   ├── shipping/               # shipping journey
+│   ├── legal/                  # shared layout for Terms, Privacy, Cookies
 │   ├── layout/                 # site header, mobile menu, footer, newsletter form
 │   ├── motion/                 # reusable animation wrappers
 │   └── ui/                     # wordmark, buttons
@@ -124,6 +126,8 @@ No environment variables are needed yet. When the database and Stripe are added,
 │   ├── validation/             # Zod schemas (contact form)
 │   ├── rate-limit.ts           # in-memory limiter for the contact form
 │   ├── contact-delivery.ts     # sends contact messages (email provider TODO)
+│   ├── shipping-policy.ts      # the ONE place for shipping facts (Shipping page + FAQ)
+│   ├── legal/                  # Terms, Privacy and Cookie policy content
 │   └── product-photos.ts       # real product photos, grouped by product slug
 ├── public/
 │   ├── products/[slug]/        # Kai's real product photos

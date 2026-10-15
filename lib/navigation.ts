@@ -28,6 +28,7 @@ export const helpNav: NavItem[] = [
 ];
 
 export const legalNav: NavItem[] = [
+  { label: "Terms of service", href: "/terms" },
   { label: "Privacy policy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
+  { label: "Cookie policy", href: "/cookies" },
 ];
