@@ -17,6 +17,10 @@ This file tells Claude how to work on this codebase. Read it fully before every 
   - Kai's father, **Farah Qumsiyeh**, started working with him. The grandfather passed away on **11 October 2023**; Farah and Kai (**Jacob Qumsiyeh**, the grandson, who shares his name) continued the work together. Three generations.
   - **The website is a memorial to the grandfather.** Kai: "This website will be his memory, from me to him." Our Story opens with him, and every page's footer carries a dedication to him. Treat anything about him with care and never invent details of his life.
   - Family portraits are in `/public/story/` (cropped; guests in the background of the father's photo are blurred for their privacy). Originals are in the git-ignored `/_originals/story-photos/`.
+  - **The workshop today:** only Farah and Kai. Farah does everything and has worked since **1990**; Kai helps him, taught by his father and grandfather, since **2005**.
+  - **The process (Kai's words):** start with a sea shell → cut it fully → polish it → place it on the cross and glue it → rough and shape each piece to fit its place. **4–5 days per cross.** Everything, to this day, is made by hand.
+  - **The grandfather's words to Kai (quote verbatim, never rewrite):** "You are the master of your own fate. Be great, and do whatever makes you feel comfortable." He taught them the love of the work and the craft.
+  - **What the work means to them:** it brought Farah and Kai closer to God and to His love for all of His people.
   - **Mission:** to share the family's story with the world, so that others can see and believe that Jesus is our Saviour.
   - Workshop address: Eweena Street, Beit Sahour, Palestine. No photos of the workshop exist yet. No social media profiles yet.
 - **Timeline:** about 8 weeks, flexible. This is a flagship project: polish and quality matter more than the deadline.
@@ -406,8 +410,8 @@ Update this table as pages move forward. Build only the page currently marked **
 | 7 | Customer account + downloads | Not started |
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
-| 10 | Our Story, Artisans, Journal | In progress (Our Story built, awaiting Kai's review; Artisans, Journal not started) |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | In progress (FAQ built with answered questions only; policy questions wait for Kai in lib/faq.ts; others not started) |
+| 10 | Our Story, Artisans, Journal | In progress (Our Story and Artisans built, awaiting Kai's review; Journal not started) |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | In progress (FAQ built with answered questions only; Contact built with a validated, rate-limited form, sending waits for an email provider + inbox from Kai; Shipping, Returns, Privacy, Terms not started) |
 
 ## 13. Never do
 

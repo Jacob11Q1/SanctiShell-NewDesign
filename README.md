@@ -46,8 +46,8 @@ The site is built **one page at a time**. Current progress:
 | 7 | Customer account + downloads | Not started |
 | 8 | Admin dashboard | Not started |
 | 9 | Clothing waitlist | Not started |
-| 10 | Our Story, Artisans, Journal | 🟡 Our Story built (a memorial to our founder), awaiting review; Artisans, Journal not started |
-| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | 🟡 FAQ built (answered questions only), others not started |
+| 10 | Our Story, Artisans, Journal | 🟡 Our Story (a memorial to our founder) and Artisans built, awaiting review; Journal not started |
+| 11 | FAQ, Contact, Shipping, Returns, Privacy, Terms | 🟡 FAQ and Contact built (form sending waits for an email provider); Shipping, Returns, Privacy, Terms not started |
 
 Links in the header and footer point at pages that don't exist yet, so they 404 until their turn comes.
 
@@ -66,7 +66,7 @@ Links in the header and footer point at pages that don't exist yet, so they 404 
 | Database *(planned)* | PostgreSQL (self-hosted) + Prisma |
 | Auth *(planned)* | Auth.js with roles `CUSTOMER` / `ADMIN` |
 | Payments *(planned)* | Stripe Checkout (hosted) + webhooks |
-| Validation *(planned)* | Zod |
+| Validation | Zod (contact form; every future form and API input) |
 | Hosting *(planned)* | Contabo VPS, Nginx, PM2, Let's Encrypt |
 
 ---
@@ -112,15 +112,23 @@ No environment variables are needed yet. When the database and Stripe are added,
 ├── components/
 │   ├── home/                   # homepage chapters (hero, prologue, chapters I–V)
 │   ├── story/                  # Our Story sections (memorial hero, timeline, the work)
+│   ├── artisans/               # Artisans page sections (profiles, faith, process, founder)
+│   ├── faq/                    # FAQ accordion
+│   ├── contact/                # contact form and workshop details
 │   ├── layout/                 # site header, mobile menu, footer, newsletter form
 │   ├── motion/                 # reusable animation wrappers
 │   └── ui/                     # wordmark, buttons
 ├── lib/
 │   ├── navigation.ts           # every site link, in one place
+│   ├── faq.ts                  # FAQ questions (unanswered ones stay hidden)
+│   ├── validation/             # Zod schemas (contact form)
+│   ├── rate-limit.ts           # in-memory limiter for the contact form
+│   ├── contact-delivery.ts     # sends contact messages (email provider TODO)
 │   └── product-photos.ts       # real product photos, grouped by product slug
 ├── public/
 │   ├── products/[slug]/        # Kai's real product photos
 │   ├── story/                  # family portraits for Our Story
+│   ├── artisans/               # macro close-ups cut from real product photos
 │   └── placeholders/           # stock mood photos (dev only) + CREDITS.md
 ├── scripts/
 │   └── check-placeholders.mjs  # pre-launch placeholder check
